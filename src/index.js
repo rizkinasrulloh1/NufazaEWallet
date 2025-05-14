@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Selamat datang di NUFAZA E-WALLET!')
+  res.send('Selamat datang di Dompet Digital NUFAZA E-WALLET!')
 })
 
 app.listen(port, () => {
