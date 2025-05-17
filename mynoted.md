@@ -17,3 +17,5 @@ DATABASE_URL= "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJ
 //Migrasi Database
 npx prisma migrate dev --name init
 
+
+
