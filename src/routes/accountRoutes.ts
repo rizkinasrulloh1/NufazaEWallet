@@ -50,7 +50,7 @@ router.post('/accounts/:id/transfer', (req: Request, res: Response) => {
   });
 });
 
-// Riwayat transaksi
+// Riwayat transaksii
 router.get('/accounts/:id/transactions', (req: Request, res: Response) => {
   transactionHistory(req, res).catch(error => {
     console.error(error);
