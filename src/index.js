@@ -1,15 +1,15 @@
-import express from 'express';
-import prisma from '../prisma/client';
+const express = require('express');
+const app = express();
 
-const express = require('express')
-const app = express()
-const port = 3000
-
+// Routes
 app.get('/', (req, res) => {
-  res.send('Selamat datang di Dompet Digital NUFAZA E-WALLET!!!')
-})
+  res.send('Nufaza E-Wallet API');
+});
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-  
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+module.exports = app; // Ekspor 
