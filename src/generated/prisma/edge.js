@@ -132,7 +132,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "F:\\2025\\Project\\NufazaEWallet\\src\\generated\\prisma",
+      "value": "F:\\2025\\Project\\Backup\\NufazaEWallet\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -146,7 +146,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "F:\\2025\\Project\\NufazaEWallet\\prisma\\schema.prisma",
+    "sourceFilePath": "F:\\2025\\Project\\Backup\\NufazaEWallet\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -160,17 +160,18 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNDIzMTc2ZTEtMTllNS00ZmZjLTljZWUtYmQ2ODI1MWJkZGJmIiwidGVuYW50X2lkIjoiNDM4YzVlMWNmZWE4ZWQ5MjRlNmFkZWNlYmNkZDA1MjI2Y2U3NjgzMmRlYzE1ZWNhYmZmODY1ZDgzMzg3NmZhMyIsImludGVybmFsX3NlY3JldCI6IjM4MjA4MzAxLTY5NjAtNDQ1ZC1hMDE5LTZjYjZhMTgzMDYwNiJ9.hQJfxu3b15_LFcrz0IUu0hmE6wO04Gv4pMfvz_ny8Hk"
+        "value": null
       }
     }
   },
   "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Account {\n  id           Int           @id @default(autoincrement())\n  name         String\n  email        String        @unique\n  balance      Float         @default(0)\n  transactions Transaction[]\n}\n\nmodel Transaction {\n  id        Int     @id @default(autoincrement())\n  amount    Float\n  type      String // deposit, withdraw, transfer\n  accountId Int\n  account   Account @relation(fields: [accountId], references: [id])\n}\n",
   "inlineSchemaHash": "c03abc7a79e8057cadfbaa1e5213de02e9d77fafa7ed7ac37bd34f46ce4a9a58",
-  "copyEngine": false
+  "copyEngine": true
 }
 config.dirname = '/'
 

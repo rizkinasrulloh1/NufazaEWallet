@@ -14,7 +14,7 @@ async function main() {
     console.log('Akun baru berhasil dibuat:', account);
   } catch (error) {
     console.error('Gagal membuat akun:', error);
-  } finally {
+  } finally { 
     await prisma.$disconnect();
   }
 }
